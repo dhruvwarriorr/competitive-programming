@@ -8,8 +8,9 @@ vector<long long> getPrimeFactors(long long n) {
     for (long long i = 2; i * i <= n; i++) {
 
         if (n % i == 0) {
+            prime_factor.push_back(i);
             while (n % i == 0) {
-                prime_factor.push_back(i);
+               
                 n /= i;
             }
         }
