@@ -14,31 +14,32 @@ A curated, production-grade, and highly-optimized C++ library containing core al
 
 ## 📚 Theory, Formulas & Cheatsheets
 
-All mathematical notes, divisibility properties, and concept-specific cheatsheets have been organized into distinct Markdown documents under [9_theory/](9_theory):
+All mathematical notes, divisibility properties, and concept-specific cheatsheets have been organized into distinct Markdown documents under [0_theory/](0_theory):
 
 ### 📖 Topic-Specific Theory Guides
-* [📚 Arrays Theory](9_theory/1_arrays/) — Prefix sums, suffix sums, difference arrays, sliding windows, and Kadane's algorithm.
-* [📚 Mathematics Theory](9_theory/2_math/) — Primes, sieves (SPF), divisors, factorials, modular inverse, and binary exponentiation.
-* [📚 Binary Search Theory](9_theory/3_binary_search/) — Bounds, searching index, and binary search on integer/decimal answer spaces.
-* [📚 Sorting Theory](9_theory/4_sorting/) — Merge sort and quick sort partition properties.
-* [📚 Bit Manipulation Theory](9_theory/5_bit_manipulation/) — Bitwise operator tables, common tricks, std::bitset cheatsheets, and encoding.
-* [📚 Graph Theory](9_theory/6_graphs/) — BFS, DFS, node level queries, and traversal entry/exit timers.
-* [📚 Tree Theory](9_theory/7_trees/) — Tree diameter, subtree sizing, parent precomputation, ancestor queries, and node height calculators.
-* [📚 Miscellaneous Theory](9_theory/8_misc/) — C++ template headers, Fast I/O, and utilities (e.g., sorting map by value).
+* [📚 Arrays Theory](0_theory/1_arrays/) — Prefix sums, suffix sums, difference arrays, sliding windows, and Kadane's algorithm.
+* [📚 Mathematics Theory](0_theory/2_math/) — Primes, sieves (SPF), divisors, factorials, modular inverse, and binary exponentiation.
+* [📚 Binary Search Theory](0_theory/3_binary_search/) — Bounds, searching index, and binary search on integer/decimal answer spaces.
+* [📚 Sorting Theory](0_theory/4_sorting/) — Merge sort and quick sort partition properties.
+* [📚 Bit Manipulation Theory](0_theory/5_bit_manipulation/) — Bitwise operator tables, common tricks, std::bitset cheatsheets, and encoding.
+* [📚 Graph Theory](0_theory/6_graphs/) — BFS, DFS, node level queries, and traversal entry/exit timers.
+* [📚 Tree Theory](0_theory/7_trees/) — Tree diameter, subtree sizing, parent precomputation, ancestor queries, and node height calculators.
+* [📚 Miscellaneous Theory](0_theory/8_misc/) — C++ template headers, Fast I/O, and utilities (e.g., sorting map by value).
 
 ### 📐 Conceptual Math & Reference Sheets
-* [📐 Mathematics Formulas](9_theory/math_formulas.md) — Arithmetic, algebraic, volume, and perimeter formulas.
-* [📍 Coordinate Geometry](9_theory/coordinate_geometry.md) — Midpoints, distances, and triangle area coordinates.
-* [🪵 Logarithms](9_theory/logarithms.md) — Logarithmic properties and digit calculations.
-* [🎲 Combinatorics](9_theory/combinatorics.md) — Permutations, combinations, arrangements, and Stars & Bars theorem.
-* [📈 Probability](9_theory/probability.md) — Probability properties, conditional rules, and expected values.
-* [🔢 Modular Arithmetic](9_theory/modular_arithmetic.md) — Modular operations, properties, and Fermat's Little Theorem.
-* [🧮 GCD & LCM](9_theory/gcd_lcm.md) — GCD and LCM equations and properties.
-* [🕊️ Pigeonhole Principle](9_theory/pigeonhole_principle.md) — Pigeonhole principle explanation.
-* [📏 Divisibility Rules](9_theory/divisibility_rules.md) — Prime divisibility checks.
-* [🔄 Symmetries](9_theory/symmetries.md) — Mirror and rotational symmetry mapping rules.
-* [🧿 Euler's Totient](9_theory/euler_totient.md) — Euler's totient product formula and divisors properties.
-* [🔤 ASCII Table & Conversions](9_theory/ascii_table.md) — ASCII decimal mappings, character conversions, and standard utilities.
+* [📐 Mathematics Formulas](0_theory/math_formulas.md) — Arithmetic, algebraic, volume, and perimeter formulas.
+* [📍 Coordinate Geometry](0_theory/coordinate_geometry.md) — Midpoints, distances, and triangle area coordinates.
+* [🪵 Logarithms](0_theory/logarithms.md) — Logarithmic properties and digit calculations.
+* [🎲 Combinatorics](0_theory/combinatorics.md) — Permutations, combinations, arrangements, and Stars & Bars theorem.
+* [📈 Probability](0_theory/probability.md) — Probability properties, conditional rules, and expected values.
+* [🔢 Modular Arithmetic](0_theory/modular_arithmetic.md) — Modular operations, properties, and Fermat's Little Theorem.
+* [⚡ Fermat's Little Theorem](0_theory/fermat_little_theorem.md) — Fermat's theorem statement, modular multiplicative inverse calculation, and C++ template.
+* [🧮 GCD & LCM](0_theory/gcd_lcm.md) — GCD and LCM equations and properties.
+* [🕊️ Pigeonhole Principle](0_theory/pigeonhole_principle.md) — Pigeonhole principle explanation.
+* [📏 Divisibility Rules](0_theory/divisibility_rules.md) — Prime divisibility checks.
+* [🔄 Symmetries](0_theory/symmetries.md) — Mirror and rotational symmetry mapping rules.
+* [🧿 Euler's Totient](0_theory/euler_totient.md) — Euler's totient product formula and divisors properties.
+* [🔤 ASCII Table & Conversions](0_theory/ascii_table.md) — ASCII decimal mappings, character conversions, and standard utilities.
 
 ---
 
@@ -56,7 +57,7 @@ The source files and math notes are organized into topic-specific modules. Click
 | [**📂 Graph Algorithms**](6_graphs) | Breadth-First Search (BFS), Depth-First Search (DFS), node level queries, and entry/exit traversal timers. |
 | [**📂 Tree Algorithms**](7_trees) | Tree diameter, subtree sizing, parent precomputation, ancestor queries, and node height calculators. |
 | [**📂 Miscellaneous & Boilerplate**](8_misc) | High-performance template headers, fast input/output macros, and utilities (e.g., sorting map by value). |
-| [**📂 Theory, Formulas & Cheatsheets**](9_theory) | Hand-crafted notes, theorems, and formula sheets for fast reference. |
+| [**📂 Theory, Formulas & Cheatsheets**](0_theory) | Hand-crafted notes, theorems, and formula sheets for fast reference. |
 
 ---
 

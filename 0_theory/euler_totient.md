@@ -41,8 +41,11 @@ $$\phi(n) = n \prod_{p | n} \left(1 - \frac{1}{p}\right)$$
 ### Euler's Theorem
 $$a^{\phi(m)} \equiv 1 \pmod m \quad \text{if } a \text{ and } m \text{ are relatively prime}$$
 
-When $m$ is prime, this reduces to Fermat's Little Theorem:
-$$a^{m-1} \equiv 1 \pmod m$$
+### Fermat's Little Theorem (Special Case)
+When $m$ is a prime number $p$, Euler's Totient function simplifies to $\phi(p) = p - 1$. Under this condition, Euler's Theorem reduces directly to **Fermat's Little Theorem**:
+$$a^{p-1} \equiv 1 \pmod p \quad \text{if } a \text{ is not divisible by } p$$
+
+For a detailed analysis, applications, and C++ code implementation, see [Fermat's Little Theorem](fermat_little_theorem.md).
 
 ### Exponent Reduction Rules
 
