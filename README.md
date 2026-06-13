@@ -8,15 +8,17 @@ A curated, organized, and high-performance C++ library containing optimized algo
 
 The C++ source files and math notes are segregated into topic-specific directories under the repository root folder, numbered sequentially:
 
-* [1_arrays/](1_arrays) — Array queries, prefix/suffix calculations, two pointers, and sliding windows.
-* [2_math/](2_math) — Prime numbers, factorization, combinatorics, and modular arithmetic.
-* [3_binary_search/](3_binary_search) — Binary search variations and lower/upper bounds.
-* [4_sorting/](4_sorting) — Merge sort and quick sort implementations.
-* [5_bit_manipulation/](5_bit_manipulation) — Bitmask subset generation, counts, and bit tricks.
-* [6_graphs/](6_graphs) — DFS, BFS, level find, entry/exit timers.
-* [7_trees/](7_trees) — Subtree queries, diameters, parent/children calculations, LCA queries.
-* [8_misc/](8_misc) — Competitive programming boilerplate templates and helper utilities.
-* [9_theory/](9_theory) — Theoretical DSA notes, mathematical formulas, and cheatsheets.
+| Directory | Topic & Key Concepts |
+| :--- | :--- |
+| [📂 1_arrays/](1_arrays) | **Arrays & Range Queries**<br>Array queries, prefix/suffix calculations, two pointers, and sliding windows |
+| [📂 2_math/](2_math) | **Mathematics & Number Theory**<br>Prime numbers, factorization, combinatorics, and modular arithmetic |
+| [📂 3_binary_search/](3_binary_search) | **Binary Search**<br>Binary search variations and lower/upper bounds |
+| [📂 4_sorting/](4_sorting) | **Sorting Algorithms**<br>Merge sort and quick sort implementations |
+| [📂 5_bit_manipulation/](5_bit_manipulation) | **Bit Manipulation**<br>Bitmask subset generation, counts, and bit tricks |
+| [📂 6_graphs/](6_graphs) | **Graph Algorithms**<br>DFS, BFS, level find, entry/exit timers |
+| [📂 7_trees/](7_trees) | **Tree Algorithms**<br>Subtree queries, diameters, parent/children calculations, LCA queries |
+| [📂 8_misc/](8_misc) | **Miscellaneous & Boilerplate**<br>Competitive programming boilerplate templates and helper utilities |
+| [📂 9_theory/](9_theory) | **Theory, Formulas & Cheatsheets**<br>Theoretical DSA notes, mathematical formulas, and cheatsheets |
 
 ---
 
