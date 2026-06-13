@@ -15,36 +15,6 @@
 
 ---
 
-## 📊 Algorithm Importance & Contest Weightage
-
-These charts represent the statistical frequency and priority of topics across major competitive programming platforms (Codeforces, LeetCode, AtCoder, USACO) — use them to prioritize your study plan effectively.
-
-### 📈 Topic Priority by Mastery Level
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#1e3a5f'}}}%%
-xychart-beta
-    title "CP Topic Priority (0-100%)"
-    x-axis ["Arrays & Prefix", "Math & NT", "Binary Search", "Two Pointers", "Bit Manipulation", "Sorting", "BFS & DFS", "Trees", "Greedy", "Dynamic Prog.", "Segment Tree"]
-    y-axis "Importance (%)" 0 --> 100
-    bar [95, 90, 82, 80, 72, 78, 85, 83, 75, 68, 55]
-```
-
-### 🥧 Typical Contest Problem Distribution
-
-```mermaid
-%%{init: {'theme': 'dark'}}%%
-pie title CP Contest Problem Distribution
-    "Arrays & Simulation" : 25
-    "Math & Number Theory" : 20
-    "Graphs & Trees" : 18
-    "Binary Search & Greedy" : 15
-    "Dynamic Programming" : 12
-    "Bit Manipulation" : 10
-```
-
----
-
 ## 📚 Theory, Formulas & Cheatsheets
 
 All conceptual notes, proofs, and formula sheets are organized under [`0_theory/`](0_theory). Each topic below links directly to its notes or subfolder.
@@ -76,31 +46,6 @@ All conceptual notes, proofs, and formula sheets are organized under [`0_theory/
 | [📏 Divisibility Rules](0_theory/divisibility_rules.md) | Quick primality checks via divisibility rules for primes |
 | [🧿 Euler's Totient](0_theory/euler_totient.md) | $\phi(n)$ product formula, Euler's Theorem, exponent reduction, power towers |
 | [🔤 ASCII Table](0_theory/ascii_table.md) | ASCII decimal mappings, char arithmetic, string conversion utilities |
-
----
-
-## 📂 Repository Layout
-
-```
-competitive-programming/
-├── 0_theory/              ← All notes, proofs, and formula sheets
-│   ├── 1_arrays/          ← 8 algorithm-specific theory files
-│   ├── 2_math/            ← 7 algorithm-specific theory files
-│   ├── 3_binary_search/   ← 5 algorithm-specific theory files
-│   ├── 4_sorting/         ← 2 algorithm-specific theory files
-│   ├── 5_bit_manipulation/← 8 algorithm-specific theory files
-│   ├── 7_trees/           ← 10 algorithm-specific theory files (graphs + trees)
-│   ├── 8_misc/            ← 2 algorithm-specific theory files
-│   └── *.md               ← Standalone reference sheets (math, probability, etc.)
-├── 1_arrays/              ← 8 C++ implementations
-├── 2_math/                ← 14 C++ implementations
-├── 3_binary_search/       ← 5 C++ implementations
-├── 4_sorting/             ← 2 C++ implementations
-├── 5_bit_manipulation/    ← 7 C++ implementations
-├── 6_graphs/              ← (legacy, merged into 7_trees)
-├── 7_trees/               ← 10 C++ implementations (graphs + trees unified)
-└── 8_misc/                ← 2 C++ implementations
-```
 
 ---
 
@@ -218,18 +163,6 @@ Click any filename to view the standalone, production-ready C++ implementation.
 | 2 | Sort `std::map` by Values | [8_misc/2_sort_map_by_values.cpp](8_misc/2_sort_map_by_values.cpp) |
 
 </details>
-
----
-
-## 🛠️ Tech Stack & Requirements
-
-| Property | Details |
-| :--- | :--- |
-| **Language** | C++17 |
-| **Standard Library** | STL (Standard Template Library) |
-| **Extensions** | GNU PBDS (`ordered_set` for order statistics) |
-| **Compilation Flag** | `-std=c++17 -O2` recommended |
-| **Input / Output** | All files read from `stdin`, write to `stdout` |
 
 ---
 
