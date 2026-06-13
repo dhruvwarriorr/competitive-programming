@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<vector<int>> buildPrefix(vector<vector<int>>& a) {
+vector <vector <int>> buildPrefix(vector <vector <int>> &a) {
     int n = a.size(), m = a[0].size();
-    vector<vector<int>> pre(n, vector<int>(m, 0));
+    vector <vector <int>> pre(n, vector <int>(m, 0));
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
@@ -16,7 +16,7 @@ vector<vector<int>> buildPrefix(vector<vector<int>>& a) {
     return pre;
 }
 
-int query(int l1, int r1, int l2, int r2, vector<vector<int>>& pre){
+int query(int l1, int r1, int l2, int r2, vector <vector <int>> &pre){
     int res = pre[l2][r2];
     if (l1 > 0) res -= pre[l1 - 1][r2];
     if (r1 > 0) res -= pre[l2][r1 - 1];
@@ -29,14 +29,14 @@ int main() {
     int n, m;
     cin >> n >> m;
 
-    vector<vector<int>> a(n, vector<int>(m));
+    vector <vector <int>> a(n, vector <int>(m));
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             cin >> a[i][j];
         }
     }
 
-    vector<vector<int>> pre = buildPrefix(a);
+    vector <vector <int>> pre = buildPrefix(a);
 
     int q;
     cin >> q;

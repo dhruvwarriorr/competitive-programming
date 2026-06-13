@@ -2,7 +2,7 @@
 using namespace std;
 
 // Works only for sorted arrays
-bool twoSumSorted(const vector<int>& arr, int target) {
+bool twoSumSorted(const vector <int> &arr, int target) {
     int n = arr.size();
     if (n < 2) return false;
     int l = 0, r = n - 1;
@@ -20,7 +20,7 @@ int main() {
     int n, target;
     cin >> n >> target;
 
-    vector<int> arr(n);
+    vector <int> arr(n);
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }

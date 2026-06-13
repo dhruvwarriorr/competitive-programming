@@ -4,7 +4,7 @@ using namespace std;
 using ll = long long;
 
 // check if "mid" is a valid answer
-bool check(ll mid, const vector<ll> &a, ll k){
+bool check(ll mid, const vector <ll> &a, ll k){
     ll cnt = 1;
     ll sum = 0;
 
@@ -28,7 +28,7 @@ int main() {
     ll k;
     cin >> n >> k;
 
-    vector<ll> a(n);
+    vector <ll> a(n);
     for (int i = 0; i < n; i++) cin >> a[i];
 
     ll low = *max_element(a.begin(), a.end());

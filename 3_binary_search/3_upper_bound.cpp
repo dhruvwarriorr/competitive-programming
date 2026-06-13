@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int upper_bound_index(vector<int>& a, int target) {
+int upper_bound_index(vector <int> &a, int target) {
     int low = 0;
     int high = a.size() - 1;
     int ans = a.size();
@@ -24,7 +24,7 @@ int main() {
     int n, target;
     cin >> n >> target;
 
-    vector<int> a(n);
+    vector <int> a(n);
     for (int i = 0; i < n; i++) cin >> a[i];
     cout << upper_bound_index(a, target) << "\n";
 

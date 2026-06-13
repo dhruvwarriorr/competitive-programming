@@ -2,14 +2,14 @@
 using namespace std;
 
 const int N = 1e5 + 5;
-vector<int> adj[N];
+vector <int> adj[N];
 
 void bfs(int root)
 {
-    queue<int> q;
+    queue <int> q;
     q.push(root);
 
-    vector<bool> vis(N, false);
+    vector <bool> vis(N, false);
     vis[root] = true;
 
     while(!q.empty())

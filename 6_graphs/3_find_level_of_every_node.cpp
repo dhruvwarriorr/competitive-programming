@@ -2,7 +2,7 @@
 using namespace std;
 
 const int N = 1e5 + 5;
-vector<int> adj[N];
+vector <int> adj[N];
 int level[N];
 
 void dfs(int node, int parent)

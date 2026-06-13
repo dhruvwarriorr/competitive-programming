@@ -6,7 +6,7 @@ int main() {
     int n, q;
     cin >> n >> q;
 
-    vector<int> diff(n + 1, 0); // 0-based
+    vector <int> diff(n + 1, 0); // 0-based
 
     for (int i = 0; i < q; i++) {
         int L, R, X;
@@ -15,7 +15,7 @@ int main() {
         diff[R + 1] -= X;
     }
 
-    vector<int> arr(n, 0);
+    vector <int> arr(n, 0);
     arr[0] = diff[0];
     for (int i = 1; i < n; i++) {
         arr[i] = arr[i - 1] + diff[i];

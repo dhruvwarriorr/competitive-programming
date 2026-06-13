@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<pair<int, int>> primeFactorization(int x, const vector<int>& spf) {
-    vector<pair<int, int>> ans;
+vector <pair <int, int>> primeFactorization(int x, const vector <int> &spf) {
+    vector <pair <int, int>> ans;
 
     while (x != 1) {
         int prime = spf[x];
@@ -22,8 +22,8 @@ vector<pair<int, int>> primeFactorization(int x, const vector<int>& spf) {
 int main() {
 
     int maxN = 1e6 + 5;
-    vector<bool> isPrime(maxN, true);
-    vector<int> spf(maxN, 1e9);
+    vector <bool> isPrime(maxN, true);
+    vector <int> spf(maxN, 1e9);
 
     for (long long i = 2; i < maxN; i++) {
         if (isPrime[i]) {
@@ -38,7 +38,7 @@ int main() {
     int n;
     cin >> n;
 
-    vector<pair<int, int>> primeF = primeFactorization(n, spf);
+    vector <pair <int, int>> primeF = primeFactorization(n, spf);
     for (auto p : primeF) {
         cout << p.first << "^" << p.second << " ";
     }

@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void merge_arrays(vector<int> &arr, int left, int mid, int right)
+void merge_arrays(vector <int> &arr, int left, int mid, int right)
 {
     int n1 = mid - left + 1;
     int n2 = right - mid;
 
-    vector<int> l(n1), r(n2);
+    vector <int> l(n1), r(n2);
 
     for (int i = 0; i < n1; i++) l[i] = arr[left + i];
     for (int i = 0; i < n2; i++) r[i] = arr[mid+1 + i];
@@ -22,7 +22,7 @@ void merge_arrays(vector<int> &arr, int left, int mid, int right)
     while (j < n2) arr[k++] = r[j++];
 }
 
-void mergeSort(vector<int> &arr, int left, int right)
+void mergeSort(vector <int> &arr, int left, int right)
 {
     if (left >= right) return;
 
@@ -38,7 +38,7 @@ int main() {
     int n;
     cin >> n;
 
-    vector<int> arr(n);
+    vector <int> arr(n);
     for (int i = 0; i < n; i++) cin >> arr[i];
     mergeSort(arr, 0, n - 1);
     for (int x : arr) cout << x << " ";
