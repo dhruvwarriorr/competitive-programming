@@ -27,23 +27,24 @@ int query(int l1, int r1, int l2, int r2, vector<vector<int>>& pre){
 int main() {
 
     int n, m;
-    if (cin >> n >> m) {
-        vector<vector<int>> a(n, vector<int>(m));
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                cin >> a[i][j];
-            }
-        }
+    cin >> n >> m;
 
-        vector<vector<int>> pre = buildPrefix(a);
-
-        int q;
-        if (cin >> q) {
-            while (q--) {
-                int l1, r1, l2, r2;
-                cin >> l1 >> r1 >> l2 >> r2;
-                cout << query(l1, r1, l2, r2, pre) << "\n";
-            }
+    vector<vector<int>> a(n, vector<int>(m));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> a[i][j];
         }
     }
+
+    vector<vector<int>> pre = buildPrefix(a);
+
+    int q;
+    cin >> q;
+
+    while (q--) {
+        int l1, r1, l2, r2;
+        cin >> l1 >> r1 >> l2 >> r2;
+        cout << query(l1, r1, l2, r2, pre) << "\n";
     }
+
+}

@@ -16,10 +16,11 @@ vector<int> getFactors(int n) {
 int main() {
 
     int n;
-    if (cin >> n) {
-        vector<int> factors = getFactors(n);
-        sort(factors.begin(), factors.end());
-        for (int x : factors) cout << x << " ";
-        cout << "\n";
-    }
-    }
+    cin >> n;
+
+    vector<int> factors = getFactors(n);
+    sort(factors.begin(), factors.end());
+    for (int x : factors) cout << x << " ";
+    cout << "\n";
+
+}

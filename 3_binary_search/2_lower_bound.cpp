@@ -14,17 +14,18 @@ int lower_bound_index(vector<int>& a, int target) {
             high = mid - 1;
         } else {
             low = mid + 1;
-        }  
+        }
     }
-    return ans;  
+    return ans;
 }
 
 int main() {
 
     int n, target;
-    if (cin >> n >> target) {
-        vector<int> a(n);
-        for (int i = 0; i < n; i++) cin >> a[i];
-        cout << lower_bound_index(a, target) << "\n";
-    }
-    }
+    cin >> n >> target;
+
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+    cout << lower_bound_index(a, target) << "\n";
+
+}

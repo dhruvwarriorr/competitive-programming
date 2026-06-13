@@ -13,8 +13,9 @@ bool isPrime(int n) {
 int main() {
 
     int n;
-    if (cin >> n) {
-        if (isPrime(n)) cout << "Prime\n";
-        else cout << "Not Prime\n";
-    }
-    }
+    cin >> n;
+
+    if (isPrime(n)) cout << "Prime\n";
+    else cout << "Not Prime\n";
+
+}

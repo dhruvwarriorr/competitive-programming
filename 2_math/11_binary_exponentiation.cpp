@@ -21,16 +21,17 @@ int binpowRecur(int a, int b) {
     int res = binpowRecur(a, b / 2);
     if(b & 1) {
         return (a * ((1LL * res * res) % M)) % M;
-    }  
+    }
     else {
         return (1LL * res * res) % M;
-    }  
+    }
 }
 
 int main() {
 
     int a, b;
-    if (cin >> a >> b) {
-        cout << binpow(a, b) << "\n";
-    }
-    }
+    cin >> a >> b;
+
+    cout << binpow(a, b) << "\n";
+
+}

@@ -15,7 +15,8 @@ long long nCr(int n, int r) {
 int main() {
 
     int n, r;
-    if (cin >> n >> r) {
-        cout << nCr(n, r) << "\n";
-    }
-    }
+    cin >> n >> r;
+
+    cout << nCr(n, r) << "\n";
+
+}

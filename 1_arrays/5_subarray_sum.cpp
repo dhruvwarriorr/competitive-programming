@@ -18,11 +18,12 @@ int countSubarrays(const vector<int>& arr, int k) {
 int main() {
 
     int n, k;
-    if (cin >> n >> k) {
-        vector<int> arr(n);
-        for (int i = 0; i < n; i++) {
-            cin >> arr[i];
-        }
-        cout << countSubarrays(arr, k) << "\n";
+    cin >> n >> k;
+
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
-    }
+    cout << countSubarrays(arr, k) << "\n";
+
+}

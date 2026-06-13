@@ -22,16 +22,17 @@ vector<long long> getSuffixSum1Based(int n, const vector<long long>& a) {
 int main() {
 
     int n;
-    if (cin >> n) {
-        vector<long long> a(n);
-        for (int i = 0; i < n; i++) {
-            cin >> a[i];
-        }
+    cin >> n;
 
-        vector<long long> sfx = getSuffixSum0Based(n, a);
-        for (int i = 0; i < n; i++) {
-            cout << sfx[i] << " ";
-        }
-        cout << "\n";
+    vector<long long> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
     }
+
+    vector<long long> sfx = getSuffixSum0Based(n, a);
+    for (int i = 0; i < n; i++) {
+        cout << sfx[i] << " ";
     }
+    cout << "\n";
+
+}

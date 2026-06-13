@@ -36,11 +36,12 @@ int main() {
     }
 
     int n;
-    if (cin >> n) {
-        vector<pair<int, int>> primeF = primeFactorization(n, spf);
-        for (auto p : primeF) {
-            cout << p.first << "^" << p.second << " ";
-        }
-        cout << "\n";
+    cin >> n;
+
+    vector<pair<int, int>> primeF = primeFactorization(n, spf);
+    for (auto p : primeF) {
+        cout << p.first << "^" << p.second << " ";
     }
-    }
+    cout << "\n";
+
+}

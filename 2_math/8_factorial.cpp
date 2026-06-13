@@ -24,7 +24,8 @@ void computeFactorials(int N) {
 int main() {
 
     int n;
-    if (cin >> n) {
-        cout << factorial(n) << "\n";
-    }
-    }
+    cin >> n;
+
+    cout << factorial(n) << "\n";
+
+}

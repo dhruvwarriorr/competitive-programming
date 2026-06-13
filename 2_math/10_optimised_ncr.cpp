@@ -29,19 +29,20 @@ void init() {
 
     for (int i = MAXN - 1; i >= 0; i--){
         invfact[i] = invfact[i + 1] * (i + 1) % MOD;
-    }  
+    }
 }
 
 long long nCr(int n, int r) {
     if (r < 0 || r > n) return 0;
-    return fact[n] * invfact[r] % MOD * invfact[n - r] % MOD;  
+    return fact[n] * invfact[r] % MOD * invfact[n - r] % MOD;
 }
 
 int main() {
 
     init();
     int n, r;
-    if (cin >> n >> r) {
-        cout << nCr(n, r) << "\n";
-    }
-    }
+    cin >> n >> r;
+
+    cout << nCr(n, r) << "\n";
+
+}

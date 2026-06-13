@@ -22,11 +22,12 @@ vector<int> sieve(int n) {
 int main() {
 
     int n;
-    if (cin >> n) {
-        vector<int> primes = sieve(n);
-        for (int p : primes) {
-            cout << p << " ";
-        }
-        cout << "\n";
+    cin >> n;
+
+    vector<int> primes = sieve(n);
+    for (int p : primes) {
+        cout << p << " ";
     }
-    }
+    cout << "\n";
+
+}

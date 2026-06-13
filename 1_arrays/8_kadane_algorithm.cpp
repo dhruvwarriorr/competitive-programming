@@ -16,11 +16,12 @@ long long maxSubarraySum(int arr[], int n) {
 int main() {
 
     int n;
-    if (cin >> n) {
-        vector<int> arr(n);
-        for (int i = 0; i < n; i++) {
-            cin >> arr[i];
-        }
-        cout << maxSubarraySum(arr.data(), n) << "\n";
+    cin >> n;
+
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
-    }
+    cout << maxSubarraySum(arr.data(), n) << "\n";
+
+}

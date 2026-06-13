@@ -13,7 +13,8 @@ int spf(int n) {
 int main() {
 
     int n;
-    if (cin >> n) {
-        cout << spf(n) << "\n";
-    }
-    }
+    cin >> n;
+
+    cout << spf(n) << "\n";
+
+}

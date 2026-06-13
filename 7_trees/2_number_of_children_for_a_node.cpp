@@ -2,29 +2,30 @@
 using namespace std;
 
 const int N = 1e5 + 5;
-vector<int> adj[N];  
+vector<int> adj[N];
 int children[N];
 
-void dfs(int node, int parent)  
-{  
-    for(auto child : adj[node])  
-    {  
-        if(child == parent) continue;  
-        children[node]++;  
-        dfs(child, node);  
-    }  
+void dfs(int node, int parent)
+{
+    for(auto child : adj[node])
+    {
+        if(child == parent) continue;
+        children[node]++;
+        dfs(child, node);
+    }
 }
 
 int main() {
 
     int nodes, edges;
-    if (cin >> nodes >> edges) {
-        for (int i = 0; i < edges; i++) {
-            int u, v;
-            cin >> u >> v;
-            adj[u].push_back(v);
-            adj[v].push_back(u);
-        }
-        dfs(1, -1);
+    cin >> nodes >> edges;
+
+    for (int i = 0; i < edges; i++) {
+        int u, v;
+        cin >> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
     }
-    }
+    dfs(1, -1);
+
+}

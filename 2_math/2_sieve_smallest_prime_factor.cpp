@@ -21,10 +21,11 @@ vector<int> sievespf(int n) {
 int main() {
 
     int n;
-    if (cin >> n) {
-        vector<int> spf = sievespf(n);
-        for (int i = 1; i <= n; i++) {
-            cout << "spf(" << i << ") = " << spf[i] << "\n";
-        }
+    cin >> n;
+
+    vector<int> spf = sievespf(n);
+    for (int i = 1; i <= n; i++) {
+        cout << "spf(" << i << ") = " << spf[i] << "\n";
     }
-    }
+
+}
