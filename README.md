@@ -35,9 +35,7 @@ All mathematical notes, divisibility properties, and concept-specific cheatsheet
 * [🔢 Modular Arithmetic](0_theory/modular_arithmetic.md) — Modular operations, properties, and Fermat's Little Theorem.
 * [⚡ Fermat's Little Theorem](0_theory/fermat_little_theorem.md) — Fermat's theorem statement, modular multiplicative inverse calculation, and C++ template.
 * [🧮 GCD & LCM](0_theory/gcd_lcm.md) — GCD and LCM equations and properties.
-* [🕊️ Pigeonhole Principle](0_theory/pigeonhole_principle.md) — Pigeonhole principle explanation.
 * [📏 Divisibility Rules](0_theory/divisibility_rules.md) — Prime divisibility checks.
-* [🔄 Symmetries](0_theory/symmetries.md) — Mirror and rotational symmetry mapping rules.
 * [🧿 Euler's Totient](0_theory/euler_totient.md) — Euler's totient product formula and divisors properties.
 * [🔤 ASCII Table & Conversions](0_theory/ascii_table.md) — ASCII decimal mappings, character conversions, and standard utilities.
 
