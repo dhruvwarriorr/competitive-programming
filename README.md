@@ -22,8 +22,7 @@ All mathematical notes, divisibility properties, and concept-specific cheatsheet
 * [📚 Binary Search Theory](0_theory/3_binary_search/) — Bounds, searching index, and binary search on integer/decimal answer spaces.
 * [📚 Sorting Theory](0_theory/4_sorting/) — Merge sort and quick sort partition properties.
 * [📚 Bit Manipulation Theory](0_theory/5_bit_manipulation/) — Bitwise operator tables, common tricks, std::bitset cheatsheets, and encoding.
-* [📚 Graph Theory](0_theory/7_trees/) — BFS, DFS, node level queries, and traversal entry/exit timers.
-* [📚 Tree Theory](0_theory/7_trees/) — Tree diameter, subtree sizing, parent precomputation, ancestor queries, and node height calculators.
+* [📚 Graph & Tree Theory](0_theory/7_trees/) — DFS, BFS, level queries, entry/exit timers, tree diameter, subtree sizing, parent precomputation, and ancestor queries.
 * [📚 Miscellaneous Theory](0_theory/8_misc/) — C++ template headers, Fast I/O, and utilities (e.g., sorting map by value).
 
 ### 📐 Conceptual Math & Reference Sheets
@@ -52,8 +51,7 @@ The source files and math notes are organized into topic-specific modules. Click
 | [**📂 Binary Search**](3_binary_search) | Binary search variations, lower/upper bounds, and binary search on answer spaces (integers & decimals). |
 | [**📂 Sorting Algorithms**](4_sorting) | Divide-and-conquer implementations, including Merge Sort and Quick Sort. |
 | [**📂 Bit Manipulation**](5_bit_manipulation) | Subset generation, counting set bits, finding bit positions, and bitwise tricks. |
-| [**📂 Graph Algorithms**](6_graphs) | Breadth-First Search (BFS), Depth-First Search (DFS), node level queries, and entry/exit traversal timers. |
-| [**📂 Tree Algorithms**](7_trees) | Tree diameter, subtree sizing, parent precomputation, ancestor queries, and node height calculators. |
+| [**📂 Graph & Tree Algorithms**](7_trees) | DFS, BFS, level queries, entry/exit timers, tree diameter, subtree sizing, parent precomputation, and ancestor queries. |
 | [**📂 Miscellaneous & Boilerplate**](8_misc) | High-performance template headers, fast input/output macros, and utilities (e.g., sorting map by value). |
 | [**📂 Theory, Formulas & Cheatsheets**](0_theory) | Hand-crafted notes, theorems, and formula sheets for fast reference. |
 
@@ -144,21 +142,8 @@ Click on any file name to view its production-ready standalone C++ implementatio
 
 </details>
 
-<details>
-<summary><b>📂 6. Graph Algorithms</b></summary>
-<br>
-
-| Algorithm / Technique | Source Code File |
-| :--- | :--- |
-| **1. Depth First Search (DFS)** | [6_graphs/1_depth_first_search.cpp](6_graphs/1_depth_first_search.cpp) |
-| **2. Breadth First Search (BFS)** | [6_graphs/2_breadth_first_search.cpp](6_graphs/2_breadth_first_search.cpp) |
-| **3. Find Level of Nodes** | [6_graphs/3_find_level_of_every_node.cpp](6_graphs/3_find_level_of_every_node.cpp) |
-| **4. DFS Entry / Exit Timers** | [6_graphs/4_in_time_out_time.cpp](6_graphs/4_in_time_out_time.cpp) |
-
-</details>
-
-<details>
-<summary><b>📂 7. Tree Algorithms</b></summary>
+<details open>
+<summary><b>📂 6. Graph & Tree Algorithms</b></summary>
 <br>
 
 | Algorithm / Technique | Source Code File |
@@ -169,11 +154,15 @@ Click on any file name to view its production-ready standalone C++ implementatio
 | **4. Farthest Leaf (Node Height)** | [7_trees/4_farthest_leaf_node_inside_subtree.cpp](7_trees/4_farthest_leaf_node_inside_subtree.cpp) |
 | **5. Diameter of a Tree** | [7_trees/5_diameter_of_tree.cpp](7_trees/5_diameter_of_tree.cpp) |
 | **6. Ancestor Query in O(1)** | [7_trees/6_ancestor_query.cpp](7_trees/6_ancestor_query.cpp) |
+| **7. Depth First Search (DFS)** | [7_trees/7_depth_first_search.cpp](7_trees/7_depth_first_search.cpp) |
+| **8. Breadth First Search (BFS)** | [7_trees/8_breadth_first_search.cpp](7_trees/8_breadth_first_search.cpp) |
+| **9. Find Level of Nodes** | [7_trees/9_find_level_of_every_node.cpp](7_trees/9_find_level_of_every_node.cpp) |
+| **10. DFS Entry / Exit Timers** | [7_trees/10_in_time_out_time.cpp](7_trees/10_in_time_out_time.cpp) |
 
 </details>
 
 <details>
-<summary><b>📂 8. Miscellaneous & Boilerplate</b></summary>
+<summary><b>📂 7. Miscellaneous & Boilerplate</b></summary>
 <br>
 
 | Algorithm / Technique | Source Code File |
