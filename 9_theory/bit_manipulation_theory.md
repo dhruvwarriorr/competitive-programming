@@ -10,15 +10,15 @@
 * **NOT (`~`)**: Inverts all bits of the number.
 
 ### Bit Subtracting & Adding Tricks
-* **Subtracting 1**: Subtracting 1 toggles all bits from the rightmost set bit to the end (e.g. $n \ \& \ (n - 1)$ removes the lowest set bit).
+* **Subtracting 1**: Subtracting 1 toggles all bits from the rightmost set bit to the end (e.g. $n \text{ AND } (n - 1)$ removes the lowest set bit).
 * **Adding 1**: Adding 1 toggles all bits from the rightmost unset bit to the end.
 
 ### Common Bit Tricks
 * If $A \oplus B = C$, then $A \oplus C = B$ and $B \oplus C = A$.
-* $A \ \& \ B \le \min(A, B)$
+* $A \text{ AND } B \le \min(A, B)$
 * $A \ | \ B \ge \max(A, B)$
-* $A + B = (A \oplus B) + 2(A \ \& \ B)$
-* $A + B = (A \ | \ B) + (A \ \& \ B)$
+* $A + B = (A \oplus B) + 2(A \text{ AND } B)$
+* $A + B = (A \ | \ B) + (A \text{ AND } B)$
 * Parity of set bits in $A \oplus B$: Let count of set bits in $A$ be $X$, and in $B$ be $Y$. The set bits in $A \oplus B$ is even if $X+Y$ is even, and odd if $X+Y$ is odd.
 * $\lfloor\log_2(n)\rfloor$ gives the exponent of the highest power of 2 less than or equal to $n$.
 * Parity check: `(x & 1) == 1` (odd), `(x & 1) == 0` (even).
@@ -32,7 +32,7 @@
 * Get rightmost unset bit (0-based): `idx = __builtin_ctz((~n) & (n + 1))`.
 * Get $K$-th bit (1-based): `bit = (n >> (k - 1)) & 1`.
 * Bitwise XOR Formula:
-  $$(a \oplus (a \ \& \ b)) + (b \oplus (a \ \& \ b)) = a \oplus b$$
+  $$(a \oplus (a \text{ AND } b)) + (b \oplus (a \text{ AND } b)) = a \oplus b$$
 
 ### Built-in C++ Functions
 * `__builtin_popcount(x)`: Counts set bits.

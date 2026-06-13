@@ -23,7 +23,7 @@
 * GP Sum of N terms:
   $$S_n = a_1 \frac{r^n - 1}{r - 1} \quad (r \ne 1)$$
 * Power of 2 check:
-  $$(n > 0) \&\& ((n \& (n - 1)) == 0)$$
+  `(n > 0) && ((n & (n - 1)) == 0)`
 * Area of Equilateral triangle:
   $$\text{Area} = \frac{\sqrt{3}}{4} \cdot \text{side}^2$$
 * Area of Parallelogram:
