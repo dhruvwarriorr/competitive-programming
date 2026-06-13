@@ -1,24 +1,32 @@
+<div align="center">
+
 # 🚀 Dhruv's Competitive Programming & DSA Library
 
-A curated, organized, and high-performance C++ library containing optimized algorithms, data structures, and standard boilerplate templates for Competitive Programming and coding interviews.
+A curated, production-grade, and highly-optimized C++ library containing core algorithms, data structures, and standard boilerplate templates designed for Competitive Programming, online judges (Codeforces, Codechef, AtCoder), and coding interviews.
+
+[![C++ Version](https://img.shields.io/badge/C%2B%2B-17-blue.svg?style=for-the-badge&logo=c%2B%2B)](https://en.cppreference.com/w/cpp/17)
+[![Optimized](https://img.shields.io/badge/Performance-Optimized-success.svg?style=for-the-badge)](https://github.com/dhruvwarriorr/competitive-programming)
+[![Code Structure](https://img.shields.io/badge/Structure-Topic--Wise-orange.svg?style=for-the-badge)](#-repository-layout)
+
+</div>
 
 ---
 
 ## 📂 Repository Layout
 
-The C++ source files and math notes are segregated into topic-specific directories under the repository root folder, numbered sequentially:
+The source files and math notes are organized into topic-specific modules. Click on any topic name to navigate directly to its directory:
 
-| Topic | Key Concepts & Contents |
+| Module | Key Concepts & Contents |
 | :--- | :--- |
-| [📂 Arrays & Range Queries](1_arrays) | Array queries, prefix/suffix calculations, two pointers, and sliding windows |
-| [📂 Mathematics & Number Theory](2_math) | Prime numbers, factorization, combinatorics, and modular arithmetic |
-| [📂 Binary Search](3_binary_search) | Binary search variations and lower/upper bounds |
-| [📂 Sorting Algorithms](4_sorting) | Merge sort and quick sort implementations |
-| [📂 Bit Manipulation](5_bit_manipulation) | Bitmask subset generation, counts, and bit tricks |
-| [📂 Graph Algorithms](6_graphs) | DFS, BFS, level find, entry/exit timers |
-| [📂 Tree Algorithms](7_trees) | Subtree queries, diameters, parent/children calculations, LCA queries |
-| [📂 Miscellaneous & Boilerplate](8_misc) | Competitive programming boilerplate templates and helper utilities |
-| [📂 Theory, Formulas & Cheatsheets](9_theory) | Theoretical DSA notes, mathematical formulas, and cheatsheets |
+| [**📂 Arrays & Range Queries**](1_arrays) | Prefix/suffix calculations, difference arrays, two-pointers, sliding windows, and Kadane's algorithm. |
+| [**📂 Mathematics & Number Theory**](2_math) | Prime sieves (SPF), factorization, combinatorics (nCr), binary exponentiation, and modular arithmetic. |
+| [**📂 Binary Search**](3_binary_search) | Binary search variations, lower/upper bounds, and binary search on answer spaces (integers & decimals). |
+| [**📂 Sorting Algorithms**](4_sorting) | Divide-and-conquer implementations, including Merge Sort and Quick Sort. |
+| [**📂 Bit Manipulation**](5_bit_manipulation) | Subset generation, counting set bits, finding bit positions, and bitwise tricks. |
+| [**📂 Graph Algorithms**](6_graphs) | Breadth-First Search (BFS), Depth-First Search (DFS), node level queries, and entry/exit traversal timers. |
+| [**📂 Tree Algorithms**](7_trees) | Tree diameter, subtree sizing, parent precomputation, ancestor queries, and node height calculators. |
+| [**📂 Miscellaneous & Boilerplate**](8_misc) | High-performance template headers, fast input/output macros, and utilities (e.g., sorting map by value). |
+| [**📂 Theory, Formulas & Cheatsheets**](9_theory) | Hand-crafted notes, theorems, and formula sheets for fast reference. |
 
 ---
 
@@ -43,9 +51,12 @@ All mathematical notes, divisibility properties, and cheatsheets have been organ
 
 ## 📂 Categorized Code Table of Contents
 
-Click on the C++ source file name to open its standalone implementation:
+Click on any file name to view its production-ready standalone C++ implementation.
 
-### 📂 1. Arrays & Range Queries
+<details open>
+<summary><b>📂 1. Arrays & Range Queries</b></summary>
+<br>
+
 | Algorithm / Technique | Source Code File |
 | :--- | :--- |
 | **1. Prefix Sum Array** | [1_arrays/1_prefix_sum.cpp](1_arrays/1_prefix_sum.cpp) |
@@ -57,7 +68,12 @@ Click on the C++ source file name to open its standalone implementation:
 | **7. Sliding Window Max Sum** | [1_arrays/7_sliding_windows.cpp](1_arrays/7_sliding_windows.cpp) |
 | **8. Kadane's Algorithm** | [1_arrays/8_kadane_algorithm.cpp](1_arrays/8_kadane_algorithm.cpp) |
 
-### 📂 2. Math & Number Theory
+</details>
+
+<details>
+<summary><b>📂 2. Math & Number Theory</b></summary>
+<br>
+
 | Algorithm / Technique | Source Code File |
 | :--- | :--- |
 | **1. Sieve of Eratosthenes** | [2_math/1_sieve_of_eratosthenes.cpp](2_math/1_sieve_of_eratosthenes.cpp) |
@@ -75,7 +91,12 @@ Click on the C++ source file name to open its standalone implementation:
 | **13. Legendre's Formula (Power of p in N!)** | [2_math/13_power_of_x_in_factorial.cpp](2_math/13_power_of_x_in_factorial.cpp) |
 | **14. Power of x in N** | [2_math/14_power_of_x_in_n.cpp](2_math/14_power_of_x_in_n.cpp) |
 
-### 📂 3. Binary Search
+</details>
+
+<details>
+<summary><b>📂 3. Binary Search</b></summary>
+<br>
+
 | Algorithm / Technique | Source Code File |
 | :--- | :--- |
 | **1. Binary Search** | [3_binary_search/1_binary_search.cpp](3_binary_search/1_binary_search.cpp) |
@@ -84,13 +105,23 @@ Click on the C++ source file name to open its standalone implementation:
 | **4. Binary Search on Answers** | [3_binary_search/4_binary_search_on_answers.cpp](3_binary_search/4_binary_search_on_answers.cpp) |
 | **5. Binary Search on Decimals** | [3_binary_search/5_binary_search_on_decimals.cpp](3_binary_search/5_binary_search_on_decimals.cpp) |
 
-### 📂 4. Sorting
+</details>
+
+<details>
+<summary><b>📂 4. Sorting</b></summary>
+<br>
+
 | Algorithm / Technique | Source Code File |
 | :--- | :--- |
 | **1. Merge Sort** | [4_sorting/1_merge_sort.cpp](4_sorting/1_merge_sort.cpp) |
 | **2. Quick Sort** | [4_sorting/2_quick_sort.cpp](4_sorting/2_quick_sort.cpp) |
 
-### 📂 5. Bit Manipulation
+</details>
+
+<details>
+<summary><b>📂 5. Bit Manipulation</b></summary>
+<br>
+
 | Algorithm / Technique | Source Code File |
 | :--- | :--- |
 | **1. Count Set Bits** | [5_bit_manipulation/1_count_the_set_bits.cpp](5_bit_manipulation/1_count_the_set_bits.cpp) |
@@ -101,7 +132,12 @@ Click on the C++ source file name to open its standalone implementation:
 | **6. Highest Unset Bit (Significant)** | [5_bit_manipulation/6_highest_unset_bit_among_significant_bits.cpp](5_bit_manipulation/6_highest_unset_bit_among_significant_bits.cpp) |
 | **7. Generate Subsets (Bitmasking)** | [5_bit_manipulation/7_generate_all_subset_using_bitmasking.cpp](5_bit_manipulation/7_generate_all_subset_using_bitmasking.cpp) |
 
-### 📂 6. Graph Algorithms
+</details>
+
+<details>
+<summary><b>📂 6. Graph Algorithms</b></summary>
+<br>
+
 | Algorithm / Technique | Source Code File |
 | :--- | :--- |
 | **1. Depth First Search (DFS)** | [6_graphs/1_depth_first_search.cpp](6_graphs/1_depth_first_search.cpp) |
@@ -109,7 +145,12 @@ Click on the C++ source file name to open its standalone implementation:
 | **3. Find Level of Nodes** | [6_graphs/3_find_level_of_every_node.cpp](6_graphs/3_find_level_of_every_node.cpp) |
 | **4. DFS Entry / Exit Timers** | [6_graphs/4_in_time_out_time.cpp](6_graphs/4_in_time_out_time.cpp) |
 
-### 📂 7. Tree Algorithms
+</details>
+
+<details>
+<summary><b>📂 7. Tree Algorithms</b></summary>
+<br>
+
 | Algorithm / Technique | Source Code File |
 | :--- | :--- |
 | **1. Precompute Parents** | [7_trees/1_get_the_parent_of_the_node.cpp](7_trees/1_get_the_parent_of_the_node.cpp) |
@@ -119,24 +160,35 @@ Click on the C++ source file name to open its standalone implementation:
 | **5. Diameter of a Tree** | [7_trees/5_diameter_of_tree.cpp](7_trees/5_diameter_of_tree.cpp) |
 | **6. Ancestor Query in O(1)** | [7_trees/6_ancestor_query.cpp](7_trees/6_ancestor_query.cpp) |
 
-### 📂 8. Miscellaneous & Boilerplate
+</details>
+
+<details>
+<summary><b>📂 8. Miscellaneous & Boilerplate</b></summary>
+<br>
+
 | Algorithm / Technique | Source Code File |
 | :--- | :--- |
 | **1. Boilerplate Template** | [8_misc/1_boilerplate.cpp](8_misc/1_boilerplate.cpp) |
 | **2. Sort Map by Values** | [8_misc/2_sort_map_by_values.cpp](8_misc/2_sort_map_by_values.cpp) |
 
+</details>
+
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack & Requirements
 
 * **Core Language:** C++17
 * **Standard Library:** Standard Template Library (STL)
+* **Optimization Flags:** `-O3` recommended for maximum performance in execution
 
 ---
 
 ## 💻 How to Use
 
-All files are structured to read from standard input and write to standard output. They can be compiled using standard compilers.
+All files are structured to read from standard input (`stdin`) and write to standard output (`stdout`). They can be compiled easily using any standard C++ compiler.
+
+> [!NOTE]
+> Ensure your compiler supports C++17 or above (`-std=c++17` flag).
 
 ### Compile a nested C++ file
 ```bash
