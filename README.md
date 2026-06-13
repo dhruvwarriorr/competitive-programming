@@ -22,7 +22,7 @@ All mathematical notes, divisibility properties, and concept-specific cheatsheet
 * [📚 Binary Search Theory](0_theory/3_binary_search/) — Bounds, searching index, and binary search on integer/decimal answer spaces.
 * [📚 Sorting Theory](0_theory/4_sorting/) — Merge sort and quick sort partition properties.
 * [📚 Bit Manipulation Theory](0_theory/5_bit_manipulation/) — Bitwise operator tables, common tricks, std::bitset cheatsheets, and encoding.
-* [📚 Graph Theory](0_theory/6_graphs/) — BFS, DFS, node level queries, and traversal entry/exit timers.
+* [📚 Graph Theory](0_theory/7_trees/) — BFS, DFS, node level queries, and traversal entry/exit timers.
 * [📚 Tree Theory](0_theory/7_trees/) — Tree diameter, subtree sizing, parent precomputation, ancestor queries, and node height calculators.
 * [📚 Miscellaneous Theory](0_theory/8_misc/) — C++ template headers, Fast I/O, and utilities (e.g., sorting map by value).
 
