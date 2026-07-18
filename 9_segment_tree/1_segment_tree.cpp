@@ -52,7 +52,7 @@ struct SegTree {
     }
 };
 
-// Example: sum aggregate, point-set update
+
 struct Node1 {
     long long val; // may change
     Node1() { // Identity element
