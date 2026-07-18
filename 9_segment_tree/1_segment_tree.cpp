@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 template<typename Node, typename Update>
 struct SegTree {
     vector<Node> tree;
