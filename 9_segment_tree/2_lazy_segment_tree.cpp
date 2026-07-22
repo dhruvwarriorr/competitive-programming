@@ -1,90 +1,104 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-struct LazySegTree {
+template<typename Node, typename Update>
+struct LazySGT {
+    vector<Node> tree;
+    vector<bool> lazy;
+    vector<Update> updates;
     int n;
-    vector<long long> tree, lazy;
+    int s;
 
-    LazySegTree(vector<long long> &a) {
-        n = (int)a.size();
-        tree.assign(4 * n, 0);
-        lazy.assign(4 * n, 0);
-        build(1, 0, n - 1, a);
+    LazySGT(int n, vector<long long>& a) { // change if type updated
+        this->n = n;
+        s = 1;
+        while (s < 2 * n) s <<= 1;
+        tree.resize(s, Node());
+        lazy.resize(s, false);
+        updates.resize(s, Update());
+        _build(a, 0, n - 1, 1);
     }
 
-    void build(int idx, int l, int r, vector<long long> &a) {
-        if (l == r) {
-            tree[idx] = a[l];
-            return;
-        }
-        int mid = (l + r) / 2;
-        build(2 * idx, l, mid, a);
-        build(2 * idx + 1, mid + 1, r, a);
-        tree[idx] = tree[2 * idx] + tree[2 * idx + 1];
+    void _build(vector<long long>& a, int l, int r, int idx) { // Never change this
+        if (l == r) { tree[idx] = Node(a[l]); return; }
+        int m = (l + r) / 2;
+        _build(a, l, m, 2 * idx);
+        _build(a, m + 1, r, 2 * idx + 1);
+        tree[idx].merge(tree[2 * idx], tree[2 * idx + 1]);
     }
 
-    void push(int idx, int l, int r) {
-        if (lazy[idx] == 0) return;
-        tree[idx] += lazy[idx] * (r - l + 1);
+    void _apply(int idx, int l, int r, Update& u) { // Never change this
         if (l != r) {
-            lazy[2 * idx] += lazy[idx];
-            lazy[2 * idx + 1] += lazy[idx];
+            lazy[idx] = true;
+            updates[idx].combine(u, l, r);
         }
-        lazy[idx] = 0;
+        u.apply(tree[idx], l, r);
     }
 
-    // O(log N)
-    void rangeAdd(int idx, int l, int r, int ql, int qr, long long val) {
-        push(idx, l, r);
-        if (r < ql || qr < l) return;
-        if (ql <= l && r <= qr) {
-            lazy[idx] += val;
-            push(idx, l, r);
-            return;
+    void _pushdown(int idx, int l, int r) { // Never change this
+        if (lazy[idx]) {
+            int m = (l + r) / 2;
+            _apply(2 * idx, l, m, updates[idx]);
+            _apply(2 * idx + 1, m + 1, r, updates[idx]);
+            updates[idx] = Update();
+            lazy[idx] = false;
         }
-        int mid = (l + r) / 2;
-        rangeAdd(2 * idx, l, mid, ql, qr, val);
-        rangeAdd(2 * idx + 1, mid + 1, r, ql, qr, val);
-        tree[idx] = tree[2 * idx] + tree[2 * idx + 1];
     }
 
-    // O(log N)
-    long long rangeSum(int idx, int l, int r, int ql, int qr) {
-        push(idx, l, r);
-        if (r < ql || qr < l) return 0;
-        if (ql <= l && r <= qr) return tree[idx];
-        int mid = (l + r) / 2;
-        return rangeSum(2 * idx, l, mid, ql, qr) +
-               rangeSum(2 * idx + 1, mid + 1, r, ql, qr);
+    void _update(int l, int r, int idx, int ql, int qr, Update& u) { // Never change this
+        if (l > qr || r < ql) return;
+        if (l >= ql && r <= qr) { _apply(idx, l, r, u); return; }
+        _pushdown(idx, l, r);
+        int m = (l + r) / 2;
+        _update(l, m, 2 * idx, ql, qr, u);
+        _update(m + 1, r, 2 * idx + 1, ql, qr, u);
+        tree[idx].merge(tree[2 * idx], tree[2 * idx + 1]);
+    }
+
+    Node _query(int l, int r, int idx, int ql, int qr) { // Never change this
+        if (l > qr || r < ql) return Node();
+        if (l >= ql && r <= qr) { _pushdown(idx, l, r); return tree[idx]; }
+        _pushdown(idx, l, r);
+        int m = (l + r) / 2;
+        Node left = _query(l, m, 2 * idx, ql, qr);
+        Node right = _query(m + 1, r, 2 * idx + 1, ql, qr);
+        Node ans;
+        ans.merge(left, right);
+        return ans;
+    }
+
+    void make_update(int l, int r, long long val) { // pass in as many parameters as required
+        Update u(val); // may change
+        _update(0, n - 1, 1, l, r, u);
+    }
+
+    Node make_query(int l, int r) {
+        return _query(0, n - 1, 1, l, r);
     }
 };
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
 
-    int n, q;
-    cin >> n >> q;
-
-    vector<long long> a(n);
-    for (auto &x : a) cin >> x;
-
-    LazySegTree st(a);
-
-    while (q--) {
-        int type;
-        cin >> type;
-        if (type == 1) {
-            int l, r;
-            long long val;
-            cin >> l >> r >> val;
-            st.rangeAdd(1, 0, n - 1, l, r, val);
-        } else {
-            int l, r;
-            cin >> l >> r;
-            cout << st.rangeSum(1, 0, n - 1, l, r) << '\n';
-        }
+struct Node1 {
+    long long val; // may change
+    Node1() { // Identity element
+        val = 0; // may change
     }
-
-    return 0;
-}
+    Node1(long long v) { // Actual Node
+        val = v; // may change
+    }
+    void merge(Node1& l, Node1& r) { // Merge two child nodes
+        val = l.val + r.val; // may change
+    }
+};
+struct Update1 {
+    long long val; // may change
+    Update1() { // Identity update
+        val = 0; // may change
+    }
+    Update1(long long v) { // Actual Update
+        val = v; // may change
+    }
+    void apply(Node1& a, int l, int r) { // apply update to given node
+        a.val = val * (r - l + 1); // may change
+    }
+    void combine(Update1& newer, int l, int r) { // combine with incoming update
+        val = newer.val; // may change
+    }
+};
