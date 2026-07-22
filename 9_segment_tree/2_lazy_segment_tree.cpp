@@ -5,14 +5,14 @@ struct LazySegTree {
     int n;
     vector<long long> tree, lazy;
 
-    LazySegTree(const vector<long long> &a) {
+    LazySegTree(vector<long long> &a) {
         n = (int)a.size();
         tree.assign(4 * n, 0);
         lazy.assign(4 * n, 0);
         build(1, 0, n - 1, a);
     }
 
-    void build(int idx, int l, int r, const vector<long long> &a) {
+    void build(int idx, int l, int r, vector<long long> &a) {
         if (l == r) {
             tree[idx] = a[l];
             return;
