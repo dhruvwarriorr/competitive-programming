@@ -1,61 +1,54 @@
-#include <bits/stdc++.h>
-using namespace std;
 
-struct SparseTableMin
-{
-    int n, maxLog;
-    vector<int> lg;
-    vector<vector<long long>> st;
+template<typename Node>
+struct SparseTable {
+    vector<vector<Node>> table;
+    int n;
+    int maxLog;
+    vector<long long> logVal;
 
-    // O(N log N)
-    SparseTableMin(const vector<long long> &a)
-    {
-        n = (int)a.size();
+    SparseTable(int n, vector<long long>& a) { // change if type updated
+        this->n = n;
+        logVal.assign(n + 1, 0);
         maxLog = n > 1 ? (int)log2(n) : 0;
-        lg.assign(n + 1, 0);
-        for (int i = 2; i <= n; i++)
-            lg[i] = lg[i / 2] + 1;
-
-        st.assign(maxLog + 1, vector<long long>(n));
-        st[0] = a;
-
+        for (int i = 2; i <= n; i++) logVal[i] = logVal[i / 2] + 1;
+        table.assign(n, vector<Node>(maxLog + 1, Node()));
+        for (int i = 0; i < n; i++) table[i][0] = Node(a[i]);
         for (int j = 1; j <= maxLog; j++)
-        {
             for (int i = 0; i + (1 << j) <= n; i++)
-            {
-                st[j][i] = min(st[j - 1][i], st[j - 1][i + (1 << (j - 1))]);
-            }
-        }
+                table[i][j].merge(table[i][j - 1], table[i + (1 << (j - 1))][j - 1]);
     }
 
-    // O(1)
-    long long queryMin(int l, int r) const
-    {
-        int j = lg[r - l + 1];
-        return min(st[j][l], st[j][r - (1 << j) + 1]);
+   
+    Node queryNormal(int l, int r) { // Never change this
+        Node ans;
+        for (int j = logVal[r - l + 1]; j >= 0; j--) {
+            if ((1 << j) <= r - l + 1) {
+                ans.merge(ans, table[l][j]);
+                l += (1 << j);
+            }
+        }
+        return ans;
+    }
+
+ 
+    Node queryIdempotent(int l, int r) { // Never change this
+        int j = logVal[r - l + 1];
+        Node ans;
+        ans.merge(table[l][j], table[r - (1 << j) + 1][j]);
+        return ans;
     }
 };
 
-int main()
-{
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
 
-    int n, q;
-    cin >> n >> q;
-
-    vector<long long> a(n);
-    for (auto &x : a)
-        cin >> x;
-
-    SparseTableMin spt(a);
-
-    while (q--)
-    {
-        int l, r;
-        cin >> l >> r;
-        cout << spt.queryMin(l, r) << '\n';
+struct Node1 {
+    long long val; // store more info if required
+    Node1() { // Identity Element
+        val = 0;
     }
-
-    return 0;
-}
+    Node1(long long v) {
+        val = v;
+    }
+    void merge(Node1& l, Node1& r) {
+        val = l.val ^ r.val; // may change
+    }
+};
