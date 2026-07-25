@@ -1,50 +1,28 @@
-#include <bits/stdc++.h>
-using namespace std;
 
-const int N = 200000 + 5;
 vector<int> adj[N];
-int tin[N], tout[N], flat[N];
-int timerVal = 0;
+int val[N]; //value of node
+int in[N], out[N];
+int euler[2 * N];
+int timer = 0;
 
-// O(N), O(N)
-void eulerTour(int node, int parent)
-{
-    tin[node] = timerVal;
-    flat[timerVal] = node;
-    timerVal++;
+void dfs(int node, int parent) {
+    in[node] = timer++;
 
-    for (int child : adj[node])
-    {
-        if (child == parent)
-            continue;
-        eulerTour(child, node);
+    for (int child : adj[node]) {
+        if (child == parent) continue;
+        dfs(child, node);
     }
 
-    tout[node] = timerVal - 1;
+    out[node] = timer++;
 }
 
-int main()
-{
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+void buildEulerTour(int n, int root) {
+    timer = 0;
+    dfs(root, -1);
 
-    int n;
-    cin >> n;
-
-    for (int i = 0; i < n - 1; i++)
-    {
-        int u, v;
-        cin >> u >> v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
+    for (int node = 1; node <= n; node++) {
+       euler[in[node]] = euler[out[node]] = val[node];
+        
     }
-
-    eulerTour(1, 0);
-
-    for (int u = 1; u <= n; u++)
-    {
-        cout << u << ": [" << tin[u] << ", " << tout[u] << "]\n";
-    }
-
-    return 0;
 }
+
