@@ -1,0 +1,17 @@
+# build output
+*.o
+*.out
+a.out
+solution
+sol
+*.exe
+*.dSYM/
+
+# local judge files
+input.txt
+output.txt
+
+# editors / OS
+.DS_Store
+.vscode/
+.idea/

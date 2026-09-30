@@ -1,3 +1,10 @@
+// Segment Tree - O(N) build, O(log N) point update and range query
+// Supports many different trees with just a change in Node and Update.
+// Very few changes required each time.
+
+#include <bits/stdc++.h>
+using namespace std;
+
 template<typename Node, typename Update>
 struct SegTree {
     vector<Node> tree;
@@ -49,7 +56,7 @@ struct SegTree {
     }
 };
 
-
+// Example: sum aggregate, point-set update
 struct Node1 {
     long long val; // may change
     Node1() { // Identity element
@@ -72,3 +79,29 @@ struct Update1 {
     }
 };
 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n, q;
+    cin >> n >> q;
+    vector<long long> a(n);
+    for (auto &x : a) cin >> x;
+
+    SegTree<Node1, Update1> st(n, a);
+
+    while (q--) {
+        int type;
+        cin >> type;
+        if (type == 1) { // 1 pos val -> a[pos] = val
+            int pos;
+            long long val;
+            cin >> pos >> val;
+            st.make_update(pos, val);
+        } else { // 2 l r -> sum of a[l..r]
+            int l, r;
+            cin >> l >> r;
+            cout << st.make_query(l, r).val << "\n";
+        }
+    }
+}

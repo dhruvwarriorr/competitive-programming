@@ -1,78 +1,76 @@
 # Segment Tree (Point Update + Range Query)
 
-Segment Tree is a binary tree over array ranges. It helps when we need many online range queries and updates.
+A binary tree over array ranges. It answers many online range queries mixed with point updates.
 
 ## Why Segment Tree
 
-If we compute each range query directly, worst-case is $O(N)$ per query.
-With Segment Tree:
+Answering each range query by scanning is $O(N)$ in the worst case. With a segment tree:
 
 - Build once in $O(N)$
-- Query in $O(\log N)$
+- Range query in $O(\log N)$
 - Point update in $O(\log N)$
-
-This is ideal for competitive programming when both updates and queries are mixed.
 
 ## Core Idea
 
 Each node stores the answer for one segment `[l, r]`.
 
 - Root stores the full range `[0, n-1]`
-- Left child stores `[l, mid]`
-- Right child stores `[mid+1, r]`
-
-For the current implementation, each node stores **sum**.
+- Left child stores `[l, mid]`, right child stores `[mid+1, r]`
+- A node is `merge(left, right)` of its children
 
 ## Complexity
 
 - Build: $O(N)$
-- Point set update: $O(\log N)$
-- Range sum query: $O(\log N)$
-- Space: $O(4N)$
+- Point update: $O(\log N)$
+- Range query: $O(\log N)$
+- Space: $O(N)$ (array of size $2^{\lceil \log_2 (2N) \rceil}$)
 
 ## Template Usage (Current File)
 
-The implementation in [../../9_segment_tree/1_segment_tree.cpp](../../9_segment_tree/1_segment_tree.cpp) exposes these methods:
+[../../9_segment_tree/1_segment_tree.cpp](../../9_segment_tree/1_segment_tree.cpp) is a **generic template**: `SegTree<Node, Update>`. To solve a new problem you only edit `Node` (what a segment stores + how two merge) and `Update` (how a point changes). The `_build`, `_update`, `_query` helpers are marked *Never change this*.
 
-- `SegTree st(a)`
-- `st.pointSet(1, 0, n - 1, pos, val)`
-- `st.rangeSum(1, 0, n - 1, l, r)`
+| Piece | Role |
+| :-- | :-- |
+| `Node()` | Identity element (returned for out-of-range segments) |
+| `Node(v)` | Leaf built from an array value |
+| `Node::merge(l, r)` | Combine two children |
+| `Update::apply(node)` | Apply the update to a leaf |
+| `make_update(pos, val)` | Public point update |
+| `make_query(l, r)` | Public range query |
 
-### Input Query Contract Used in `main()`
+### Input Contract Used in `main()`
 
-- `type = 1 pos val` means set `a[pos] = val`
-- `type = 2 l r` means print sum on range `[l, r]`
+- `n q`, then the array
+- `1 pos val` sets `a[pos] = val`
+- `2 l r` prints the sum of `a[l..r]` (0-based, inclusive)
 
 ### Minimal Usage Snippet
 
 ```cpp
 vector<long long> a = {5, 1, 3, 7, 2};
-int n = (int)a.size();
-SegTree st(a);
+SegTree<Node1, Update1> st(a.size(), a);
 
-st.pointSet(1, 0, n - 1, 2, 10);           // a[2] = 10
-cout << st.rangeSum(1, 0, n - 1, 1, 3);    // sum(1..3)
+st.make_update(2, 10);                   // a[2] = 10
+cout << st.make_query(1, 3).val;         // sum(1..3) = 1 + 10 + 7
 ```
 
 ## How To Convert This Template
 
-To switch from range sum to another operation:
+| Goal | `Node()` identity | `merge` |
+| :-- | :-- | :-- |
+| Sum | `0` | `l + r` |
+| Min | `LLONG_MAX` | `min(l, r)` |
+| Max | `LLONG_MIN` | `max(l, r)` |
+| XOR | `0` | `l ^ r` |
+| GCD | `0` | `gcd(l, r)` |
 
-- Change merge rule in `build` and after updates.
-- Change neutral return in no-overlap case inside query.
-
-Examples:
-
-- Min query: merge with `min`, neutral as very large value.
-- Max query: merge with `max`, neutral as very small value.
-- XOR query: merge with `^`, neutral as `0`.
-- GCD query: merge with `gcd`, neutral as `0`.
+To store more (for example max-subarray-sum) add fields to `Node` and combine them in `merge`.
 
 ## Common Pitfalls
 
-- Index mismatch (0-based vs 1-based input).
-- Wrong neutral value in query no-overlap case.
-- Forgetting to rebuild parent after child update.
-- Overflow for large sums: use `long long`.
+- 0-based vs 1-based mismatch between input and the tree.
+- Wrong identity element in `Node()` (breaks the no-overlap case).
+- Overflow for large sums: keep `long long`.
+- For plain prefix sums with point add, a [Fenwick tree](3_fenwick_tree.md) is shorter and faster.
 
 [View Full C++ Implementation](../../9_segment_tree/1_segment_tree.cpp)

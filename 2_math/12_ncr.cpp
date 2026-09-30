@@ -1,15 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long long fact(int n) {
-    long long f = 1;
-    for (int i = 1; i <= n; i++) f *= i;
-    return f;
-}
-
+// nCr without modulo, no factorial overflow  -  O(min(r, n - r))
+// After step i, res == C(n - r + i, i), so the division is always exact.
 long long nCr(int n, int r) {
-    if (r > n) return 0;
-    return fact(n) / (fact(r) * fact(n - r));
+    if (r < 0 || r > n) return 0;
+    r = min(r, n - r);
+
+    long long res = 1;
+    for (int i = 1; i <= r; i++) {
+        res = res * (n - r + i) / i;
+    }
+    return res;
 }
 
 int main() {

@@ -1,3 +1,9 @@
+// Sparse Table - O(N log N) build; O(1) for idempotent queries (min/max/gcd), O(log N) for others
+// Supports many different tables with just a change in Node.
+// Very few changes required each time.
+
+#include <bits/stdc++.h>
+using namespace std;
 
 template<typename Node>
 struct SparseTable {
@@ -40,15 +46,37 @@ struct SparseTable {
 };
 
 
-struct Node1 {
-    long long val; // store more info if required
-    Node1() { // Identity Element
-        val = 0;
-    }
-    Node1(long long v) {
-        val = v;
-    }
-    void merge(Node1& l, Node1& r) {
-        val = l.val ^ r.val; // may change
-    }
+// Example 1: min aggregate (idempotent -> use queryIdempotent, O(1))
+struct NodeMin {
+    long long val;
+    NodeMin() { val = LLONG_MAX; } // Identity element
+    NodeMin(long long v) { val = v; }
+    void merge(NodeMin& l, NodeMin& r) { val = min(l.val, r.val); }
 };
+
+// Example 2: XOR aggregate (non-idempotent -> use queryNormal, O(log N))
+struct NodeXor {
+    long long val; // store more info if required
+    NodeXor() { val = 0; } // Identity element
+    NodeXor(long long v) { val = v; }
+    void merge(NodeXor& l, NodeXor& r) { val = l.val ^ r.val; }
+};
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n, q;
+    cin >> n >> q;
+    vector<long long> a(n);
+    for (auto &x : a) cin >> x;
+
+    SparseTable<NodeMin> mn(n, a);
+    SparseTable<NodeXor> xr(n, a);
+
+    while (q--) {
+        int l, r;
+        cin >> l >> r; // 0-based, inclusive
+        cout << mn.queryIdempotent(l, r).val << " " << xr.queryNormal(l, r).val << "\n";
+    }
+}
